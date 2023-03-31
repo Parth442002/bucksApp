@@ -7,7 +7,6 @@ const RewardsValueScreen = () => {
     AntDesign.loadFont();
     FontAwesome.loadFont()
   }, [])
-
   return (
     <SafeAreaView style={{flex:1,backgroundColor:"green"}}>
       <View style={styles.top}>

@@ -1,19 +1,26 @@
 import { View, Text,StyleSheet } from 'react-native'
-import React,{useEffect} from 'react'
-import { Ionicons } from '@expo/vector-icons';
+import React,{useContext, useEffect} from 'react'
+import { FontAwesome ,Ionicons} from '@expo/vector-icons';
+import constants from '../../Assets/constants';
+import { MyContext } from '../../context/userContext';
 
 const TopSection = () => {
+
   useEffect(() => {
     Ionicons.loadFont();
+    FontAwesome.loadFont();
   }, [])
 
   return (
     <View style={styles.main}>
       <View style={styles.leftMain}>
-        <Ionicons name="navigate" size={32} color="blue" />
+        <Ionicons name="navigate" size={32} color={constants.darkGreen} />
         <Text style={styles.location}>Potheri</Text>
       </View>
-      <View style={styles.userIcon}/>
+      <View style={{flexDirection:"row",alignItems:"center",}}>
+        <Text style={{fontSize:24,marginRight:5,fontWeight:"400",fontStyle:"italic"}}>Parth</Text>
+        <FontAwesome name="user-circle" size={32} color={constants.blackColor}/>
+      </View>
     </View>
   )
 }

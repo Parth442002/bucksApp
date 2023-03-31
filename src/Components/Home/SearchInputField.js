@@ -1,6 +1,7 @@
 import { View, Text, TextInput, StyleSheet } from 'react-native'
 import React,{useEffect} from 'react'
 import { Feather } from '@expo/vector-icons';
+import constants from '../../Assets/constants';
 
 const SearchInputField = () => {
   useEffect(() => {
@@ -10,7 +11,7 @@ const SearchInputField = () => {
   return (
     <View style={styles.container}>
       <TextInput
-        placeholder='Search for Shops, Offers'
+        placeholder='Search for Shops, Offers.....'
         style={styles.textInput}
       />
       <Feather
@@ -27,14 +28,13 @@ export default SearchInputField
 
 const styles=StyleSheet.create({
   container:{
-    backgroundColor:"lightgray",
+    backgroundColor:constants.backGroundColor,
+    borderWidth:1,
     flexDirection:"row",
     justifyContent:"space-between",
     alignItems:"center",
     width:"80%",
     borderRadius:10,
-    //position:"absolute",
-    //top:"14%",
     alignSelf:"center",
     marginTop:24,
   },
@@ -42,7 +42,7 @@ const styles=StyleSheet.create({
     fontSize:20,
     paddingVertical:10,
     paddingHorizontal:12,
-    paddingLeft:40,
+    paddingLeft:25,
   },
   search:{
     marginRight:16,

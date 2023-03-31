@@ -1,12 +1,13 @@
-import { View, Text,FlatList,StyleSheet, TouchableOpacity } from 'react-native'
+import { View, Text,FlatList,StyleSheet, TouchableOpacity,Image} from 'react-native'
 import React,{useEffect} from 'react'
 import { AntDesign } from '@expo/vector-icons';
+import constants from '../../Assets/constants';
 
 const PartnerCards = () => {
   const data=[1,2,3,4,5]
   return (
     <View style={styles.partnerContainer}>
-      <Text style={styles.topic}>PartnerCards</Text>
+      <Text style={styles.topic}>Shops Near You</Text>
       <FlatList
       data={data}
       horizontal={false}
@@ -37,13 +38,18 @@ const CardItem=()=>{
       style={styles.cardItem}
     >
       <View style={styles.left}>
-        <View style={styles.image}/>
+        <Image
+          style={styles.image}
+          source="../../Assets/Images/shop.png"
+          contentFit="cover"
+          transition={1000}
+        />
         <Text style={styles.offer}>50%</Text>
       </View>
       <View style={styles.right}>
         <Text style={styles.company}>Nike Football</Text>
         <View style={styles.metaInfo}>
-          <AntDesign name="star" size={20} color="black" />
+          <AntDesign name="star" size={20} color={constants.lightGreen}/>
           <Text style={styles.rating}>5</Text>
           <Text style={styles.open_close}>Open</Text>
         </View>
@@ -51,7 +57,6 @@ const CardItem=()=>{
           <Text style={styles.desc}>Shoes, Footballs, Clothes</Text>
           <Text style={styles.distance}>4 Km</Text>
         </View>
-        <Text>Offer Zone</Text>
       </View>
     </TouchableOpacity>
   )
@@ -62,10 +67,15 @@ const CardItem=()=>{
 const styles=StyleSheet.create({
   partnerContainer:{
     //position:"absolute",
+    backgroundColor:constants.backGroundColor
   },
   topic:{
     fontSize:24,
-    textAlign:"center"
+    textAlign:"left",
+    paddingHorizontal:"5%",
+    fontWeight:"600",
+    marginVertical:10,
+
   },
   cardItem:{
     alignSelf:"center",
@@ -73,7 +83,6 @@ const styles=StyleSheet.create({
     justifyContent:"space-between",
     alignItems:"center",
     marginVertical:10,
-    borderWidth:1,
     borderRadius:20,
     //height:120,
   },
@@ -82,9 +91,8 @@ const styles=StyleSheet.create({
     borderRadius:20,
   },
   image:{
-    height:100,
-    width:100,
-    backgroundColor:"lightgray",
+    height:120,
+    width:120,
     position:"relative",
     borderTopLeftRadius:20,
     borderBottomLeftRadius:20,
@@ -95,7 +103,7 @@ const styles=StyleSheet.create({
     bottom:4,
     right:5,
     fontWeight:"700",
-    color:"blue",
+    color:constants.darkGreen,
   },
   right:{
     height:100,
@@ -119,6 +127,7 @@ const styles=StyleSheet.create({
     fontSize:16,
     marginLeft:5,
     fontWeight:"500",
+    color:constants.lightGreen,
   },
   open_close:{
     marginLeft:10,
@@ -127,9 +136,14 @@ const styles=StyleSheet.create({
   desc_section:{
     paddingTop:10,
     marginLeft:20,
+    bottom:0,
     marginRight:20,
     flexDirection:"row",
     justifyContent:"space-between",
+  },
+  desc:{
+    fontSize:16,
+    maxWidth:"80%",
   },
   distance:{
     fontSize:16,

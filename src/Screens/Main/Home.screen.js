@@ -1,8 +1,6 @@
-import { View, Text } from 'react-native'
 import React,{useContext,useEffect} from 'react'
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view'
-import * as Location from 'expo-location';
-
+import constants from '../../Assets/constants';
 import {MyContext} from "../../context/userContext";
 import TopSection from '../../Components/Home/TopSection'
 import { StatusBar } from 'expo-status-bar'
@@ -18,7 +16,8 @@ const HomeScreen = () => {
   return (
     <KeyboardAwareScrollView
       resetScrollToCoords={{ x: 0, y: 0 }}
-      contentContainerStyle={{marginTop:48}}
+      contentContainerStyle={{marginTop:48,backgroundColor:constants.backGroundColor}}
+      style={{backgroundColor:constants.backGroundColor}}
       scrollEnabled={true}
     >
       <StatusBar/>

@@ -1,5 +1,4 @@
 const constants={
-  backgroundColor:"#FEFFFA",
   primaryGreen:"#DCFD52",
   blackColor:"#000000",
   primaryOrange:"#FCAD52",
@@ -11,6 +10,9 @@ const constants={
   montM:"Montserrat-Medium",
   montB:"Montserrat-Bold",
   montEB:"Montserrat-ExtraBold",
+  darkGreen:"#115E38", lightGreen:"#4DD07F",
+  backGroundColor:"#FFFFFF",
+  gray:'#E1E1E1',
 }
 
 

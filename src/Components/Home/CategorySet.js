@@ -1,26 +1,55 @@
-import { View, Text,StyleSheet } from 'react-native'
-import React from 'react'
-
+import { View, Text,StyleSheet ,TouchableOpacity} from 'react-native'
+import React,{useEffect} from 'react'
+import { Feather, Ionicons,MaterialCommunityIcons } from '@expo/vector-icons'
+import constants from '../../Assets/constants'
 const CategorySet = () => {
+  useEffect(() => {
+    Ionicons.loadFont();
+    MaterialCommunityIcons.loadFont();
+    Feather.loadFont();
+  }, [])
+
   return (
     <View style={styles.container}>
-      <CategoryCard/>
-      <CategoryCard/>
-      <CategoryCard/>
-      <CategoryCard/>
-    </View>
-  )
-}
-
-
-const CategoryCard=()=>{
-  return(
-    <View style={styles.card}>
-        <View style={styles.image}/>
+      <TouchableOpacity style={styles.card}>
+        <Ionicons
+          name="fast-food-outline"
+          size={24}
+          color={constants.primaryOrange}
+          style={{padding:20,backgroundColor:constants.gray}}
+        />
         <Text style={styles.text}>Food</Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={styles.card}>
+        <MaterialCommunityIcons
+          name="movie-check-outline"
+          size={24}
+          color={constants.primaryOrange}
+          style={{padding:20,backgroundColor:constants.gray}}
+        />
+        <Text style={styles.text}>Entertainment</Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={styles.card}>
+        <Ionicons
+          name="fast-food-outline"
+          size={24}
+          color={constants.primaryOrange}
+          style={{padding:20,backgroundColor:constants.gray}}
+        />
+        <Text style={styles.text}>Services</Text>
+    </TouchableOpacity>
+    <TouchableOpacity style={styles.card}>
+        <Feather name="shopping-cart" size={24}
+
+          color={constants.primaryOrange}
+          style={{padding:20,backgroundColor:constants.gray}}
+        />
+        <Text style={styles.text}>Retail</Text>
+    </TouchableOpacity>
     </View>
   )
 }
+
 export default CategorySet
 
 
@@ -38,11 +67,10 @@ const styles=StyleSheet.create({
     flexDirection:"column",
     alignItems:"center",
   },
-  image:{
-    height:72,
-    width:64,
-    backgroundColor:"lightgray",
-    borderRadius:10,
+  text:{
+    fontSize:12,
+    marginTop:5,
+    color:"black",
   }
 })
 
