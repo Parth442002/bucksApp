@@ -5,6 +5,7 @@ import TabBarIcon,{CustomTabBarButton,CustomTabBarIcon} from '../Components/Nav/
 
 import SampleScreen from "../Screens/Main/Sample.screen";
 import ExploreScreen from '../Screens/Main/Explore.screen';
+import ExploreSampleScreen from "../Screens/Main/ExploreSample";
 import HomeScreen from '../Screens/Main/Home.screen';
 
 const Tab=createBottomTabNavigator();
@@ -39,7 +40,7 @@ const MainTabs=()=>{
       />
       <Tab.Screen
         name="Explore"
-        component={ExploreScreen}
+        component={ExploreSampleScreen}
         options={{
           tabBarIcon:({ focused}) =>
           (<TabBarIcon name="wallet" labelName="Explore" focused={focused}/>),
