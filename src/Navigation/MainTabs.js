@@ -8,6 +8,7 @@ import ExploreScreen from '../Screens/Main/Explore.screen';
 import ExploreSampleScreen from "../Screens/Main/ExploreSample";
 import HomeScreen from '../Screens/Main/Home.screen';
 import ProfileScreen from '../Screens/Main/Profile.screen';
+import NotificationsScreen from '../Screens/Main/Notifications.screen';
 
 const Tab=createBottomTabNavigator();
 
@@ -48,8 +49,20 @@ const MainTabs=()=>{
         }}
       />
       <Tab.Screen
-        name="ActivityScreen"
+        name="Rewards"
         component={SampleScreen}
+        options={{
+          tabBarIcon:(focused)=>(
+            <CustomTabBarIcon focused={focused}/>
+          ),
+          tabBarButton:(props)=>(
+            <CustomTabBarButton {...props} />
+          )
+        }}
+      />
+      <Tab.Screen
+        name="ActivityScreen"
+        component={NotificationsScreen}
         options={{
           tabBarIcon:({ focused}) =>
           (<TabBarIcon name="bookmark-o" labelName="Recent" focused={focused}/>),
