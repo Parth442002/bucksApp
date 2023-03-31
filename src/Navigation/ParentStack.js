@@ -10,12 +10,13 @@ import {MyContext} from "../context/userContext";
 import SpashScreen from '../Screens/Splash.screen';
 import AuthStack from "./AuthStack"
 import MainTabs from "./MainTabs"
+import MiscStack from './MiscStack';
 
 const Stack = createNativeStackNavigator();
 const ParentStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName='main'
+      initialRouteName='Misc'
       screenOptions={{
         headerShown:false
       }}
@@ -23,6 +24,7 @@ const ParentStack = () => {
       <Stack.Screen name="SpashScreen" component={SpashScreen}/>
       <Stack.Screen name="Auth" component={AuthStack}/>
       <Stack.Screen name="main" component={MainTabs}/>
+      <Stack.Screen name="Misc" component={MiscStack}/>
     </Stack.Navigator>
   )
 }

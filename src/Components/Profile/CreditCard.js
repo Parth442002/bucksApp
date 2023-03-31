@@ -3,7 +3,9 @@ import React from 'react'
 import LottieView from 'lottie-react-native';
 
 
-const CreditCard = () => {
+const CreditCard = ({
+  holdername="PARTH KATIYAR",valid_from="4 April 22",valid_till="30 January 2030",type="Regular",status= true,
+}) => {
   return (
     <View style={styles.container}>
       <View style={styles.LottieContainer}>
@@ -11,9 +13,10 @@ const CreditCard = () => {
             autoPlay
             source={require("../../Assets/LottieFiles/cardGradient.json")}
           />
-        <Text style={styles.cardHolderName}>PARTH KATIYAR</Text>
-        <Text style={styles.validFrom}>FROM- <Text>4 April 22</Text></Text>
-        <Text style={styles.validTill}>TO- <Text>12 Jan 26</Text></Text>
+        <Text style={styles.cardHolderName}>{holdername}</Text>
+        <Text style={styles.validFrom}>FROM- <Text>{valid_from}</Text></Text>
+        <Text style={styles.validTill}>TO- <Text>{valid_till}</Text></Text>
+        <Text style={{...styles.validTill,marginTop:10}}>Type <Text>{type}</Text></Text>
         <Image
           style={styles.masterCard}
           source={{uri:"https://toppng.com/uploads/preview/visa-us-vector-logo-free-download-11574017219rwlbxkijxr.png"}}
@@ -30,7 +33,7 @@ export default CreditCard
 
 const styles = StyleSheet.create({
   LottieContainer:{
-    width:"90%",
+    width:"100%",
     alignSelf:"center",
     marginTop:40,
     height:180,
@@ -57,7 +60,7 @@ const styles = StyleSheet.create({
   },
   validTill:{
     position:"relative",
-    top:60,
+    top:40,
     left:10,
     fontWeight:"700",
     color:"white"
