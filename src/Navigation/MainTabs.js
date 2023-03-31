@@ -43,7 +43,7 @@ const MainTabs=()=>{
       />
       <Tab.Screen
         name="Explore"
-        component={ExploreSampleScreen}
+        component={ExploreScreen}
         options={{
           tabBarIcon:({ focused}) =>
           (<TabBarIcon name="wallet" labelName="Explore" focused={focused}/>),
