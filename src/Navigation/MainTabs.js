@@ -7,6 +7,7 @@ import SampleScreen from "../Screens/Main/Sample.screen";
 import ExploreScreen from '../Screens/Main/Explore.screen';
 import ExploreSampleScreen from "../Screens/Main/ExploreSample";
 import HomeScreen from '../Screens/Main/Home.screen';
+import ProfileScreen from '../Screens/Main/Profile.screen';
 
 const Tab=createBottomTabNavigator();
 
@@ -56,7 +57,7 @@ const MainTabs=()=>{
       />
       <Tab.Screen
         name="ProfileScreen"
-        component={SampleScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon:({ focused}) =>
           (<TabBarIcon name="user" labelName="Profile" focused={focused}/>),
