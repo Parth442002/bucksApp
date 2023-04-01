@@ -16,14 +16,14 @@ const Stack = createNativeStackNavigator();
 const ParentStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="main"
+      initialRouteName="Misc"
       screenOptions={{
         headerShown:false
       }}
       >
-      {/*<Stack.Screen name="SpashScreen" component={SpashScreen}/>*/}
+      <Stack.Screen name="SpashScreen" component={SpashScreen}/>
       <Stack.Screen name="Auth" component={AuthStack}/>
-      <Stack.Screen name="main" component={MainTabs}/>
+      <Stack.Screen name="Main" component={MainTabs}/>
       <Stack.Screen name="Misc" component={MiscStack}/>
     </Stack.Navigator>
   )
