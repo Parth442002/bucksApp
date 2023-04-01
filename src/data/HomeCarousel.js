@@ -1,18 +1,20 @@
-import { StyleSheet, Text, View,Dimensions,Image, TouchableOpacity, FlatList } from 'react-native'
+import { StyleSheet, Text, View,Dimensions, TouchableOpacity, FlatList } from 'react-native'
 import React, { useEffect } from 'react'
+import { Image } from 'expo-image';
 import { AntDesign,Entypo,MaterialCommunityIcons } from '@expo/vector-icons';
 import globals from "../Assets/constants"
 
 const windowWidth = Dimensions.get('window').width;
 
 const data = [
-  'https://cdn.dribbble.com/users/3281732/screenshots/11192830/media/7690704fa8f0566d572a085637dd1eee.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/13130602/media/592ccac0a949b39f058a297fd1faa38e.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/9165292/media/ccbfbce040e1941972dbc6a378c35e98.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/11205211/media/44c854b0a6e381340fbefe276e03e8e4.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/7003560/media/48d5ac3503d204751a2890ba82cc42ad.jpg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/6727912/samji_illustrator.jpeg?compress=1&resize=1200x1200',
-  'https://cdn.dribbble.com/users/3281732/screenshots/13661330/media/1d9d3cd01504fa3f5ae5016e5ec3a313.jpg?compress=1&resize=1200x1200'
+  {
+    image:require("../Assets/Images/Vertical1.png"),
+    id:1
+  },
+  {
+    image:require("../Assets/Images/Vertical2.png"),
+    id:2
+  }
   ];
 
 const HomeCarousel = () => {
@@ -35,7 +37,7 @@ const HomeCarousel = () => {
       keyExtractor={(_,index)=>index.toString()}
       renderItem={(item)=>{
         return(
-          <CarouselCard/>
+          <CarouselCard item={item}/>
         )
       }}
       />
@@ -44,9 +46,15 @@ const HomeCarousel = () => {
   )
 }
 
-export const CarouselCard=()=>{
+export const CarouselCard=(item)=>{
   return(
     <TouchableOpacity style={styles.cardContaner}>
+      <Image
+        source={{uri:item.image}}
+        focusable
+        style={{width:windowWidth*.6,
+          height:250}}
+      />
     </TouchableOpacity>
   )
 }

@@ -1,4 +1,5 @@
-import { View, Text,FlatList,StyleSheet, TouchableOpacity,Image} from 'react-native'
+import { View, Text,FlatList,StyleSheet, TouchableOpacity} from 'react-native'
+import { Image } from 'expo-image';
 import React,{useEffect} from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import constants from '../../Assets/constants';
@@ -40,7 +41,7 @@ const CardItem=()=>{
       <View style={styles.left}>
         <Image
           style={styles.image}
-          source="../../Assets/Images/shop.png"
+          source={require("../../Assets/Images/Icon2.png")}
           contentFit="cover"
           transition={1000}
         />

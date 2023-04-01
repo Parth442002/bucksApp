@@ -1,14 +1,37 @@
 import { View, Text, SafeAreaView, StyleSheet, TouchableOpacity } from 'react-native'
-import React,{useEffect} from 'react'
+import React,{useEffect, useState} from 'react';
 import { StatusBar } from 'expo-status-bar'
+import { useQuery } from 'react-query';
 import { AntDesign,FontAwesome } from '@expo/vector-icons';
 import CreditCard from '../../Components/Profile/CreditCard';
+import {getUserData} from "../../Services/authentication.service"
 
 const ProfileScreen = () => {
+  const [userData, setUserData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
   useEffect(() => {
-    AntDesign.loadFont();
-    FontAwesome.loadFont();
-  }, [])
+    async function fetchData() {
+      try {
+        const data = await getUserData();
+        setUserData(data);
+        setLoading(false);
+      } catch (error) {
+        setError(error);
+        setLoading(false);
+      }
+    }
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return <Text>Loading</Text>
+  }
+
+  if (error) {
+    return <Text>Error</Text>
+  }
 
   return (
     <View style={{flex:1,backgroundColor:"white"}}>

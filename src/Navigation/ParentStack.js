@@ -1,10 +1,6 @@
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React,{useContext,useEffect,useState} from 'react'
-import { Location } from 'expo-location';
-
-//Context
-import {MyContext} from "../context/userContext";
 
 //Local Imports
 import SpashScreen from '../Screens/Splash.screen';
@@ -13,10 +9,11 @@ import MainTabs from "./MainTabs"
 import MiscStack from './MiscStack';
 
 const Stack = createNativeStackNavigator();
+
 const ParentStack = () => {
   return (
     <Stack.Navigator
-      initialRouteName="Misc"
+      initialRouteName="Main"
       screenOptions={{
         headerShown:false
       }}
