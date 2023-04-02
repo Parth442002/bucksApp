@@ -7,32 +7,6 @@ import CreditCard from '../../Components/Profile/CreditCard';
 import {getUserData} from "../../Services/authentication.service"
 
 const ProfileScreen = () => {
-  const [userData, setUserData] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      try {
-        const data = await getUserData();
-        setUserData(data);
-        setLoading(false);
-      } catch (error) {
-        setError(error);
-        setLoading(false);
-      }
-    }
-    fetchData();
-  }, []);
-
-  if (loading) {
-    return <Text>Loading</Text>
-  }
-
-  if (error) {
-    return <Text>Error</Text>
-  }
-
   return (
     <View style={{flex:1,backgroundColor:"white"}}>
       <StatusBar/>
