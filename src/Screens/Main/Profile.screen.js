@@ -7,6 +7,10 @@ import CreditCard from '../../Components/Profile/CreditCard';
 import {getUserData} from "../../Services/authentication.service"
 
 const ProfileScreen = () => {
+  useEffect(() => {
+    console.log("this is working")
+  }, [])
+
   return (
     <View style={{flex:1,backgroundColor:"white"}}>
       <StatusBar/>
